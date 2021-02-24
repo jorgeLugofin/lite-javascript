@@ -1,12 +1,10 @@
 {
   "dependencies": {
     "axios": "^0.21.1",
-    "constants": "0.0.2",
-    "crypto": "^1.0.1",
     "querystring": "^0.2.1"
   },
   "name": "finerio-connect-lite",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "JavaScript SDK for Finerio Connect Lite API",
   "main": "finerio-connect-lite.js",
   "devDependencies": {},
@@ -17,5 +15,13 @@
     "open-banking"
   ],
   "author": "Finerio Connect",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Finerio-Connect/lite-javascript.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Finerio-Connect/lite-javascript/issues"
+  },
+  "homepage": "https://github.com/Finerio-Connect/lite-javascript#readme"
 }
