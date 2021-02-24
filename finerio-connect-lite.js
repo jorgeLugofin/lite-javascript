@@ -3,7 +3,6 @@
 const axios = require( 'axios' );
 const querystring = require( 'querystring' );
 const crypto = require( 'crypto' );
-const constants = require( 'constants' );
 
 class Bank {
 
@@ -466,7 +465,8 @@ qVa7ouJfXs3HUrpthJqQ30cPefEt0jAFj6QRJDsGwKTXS3gq7mGz3AYq0Be2LuTD
 
     let buffer = Buffer.from( textToEncrypt );
     let encrypted = crypto.publicEncrypt(
-        { key: this.#publicKey, padding: constants.RSA_PKCS1_PADDING },
+        { key: this.#publicKey,
+          padding: crypto.constants.RSA_PKCS1_PADDING },
         buffer );
     return encrypted.toString( 'base64' );
 
