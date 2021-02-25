@@ -56,11 +56,14 @@ class Credential {
 
 class CreateCredential {
 
-  constructor( customId, bankId, username, password ) {
+  constructor( customId, bankId, username, password, securityCode,
+      documentType ) {
     this.customId = customId;
     this.bankId = bankId;
     this.username = username;
     this.password = password;
+    this.securityCode = securityCode;
+    this.documentType = documentType;
   }
 
 }
@@ -169,6 +172,12 @@ qVa7ouJfXs3HUrpthJqQ30cPefEt0jAFj6QRJDsGwKTXS3gq7mGz3AYq0Be2LuTD
     let url = `${this.#serverUrl}/credentials`;
     dto.username = this.encrypt( dto.username );
     dto.password = this.encrypt( dto.password );
+    if ( dto.securityCode != null ) {
+      dto.securityCode = this.encrypt( dto.seccurityCode );
+    }
+    if ( dto.documentType != null ) {
+      dto.documentType = this.encrypt( dto.documentType );
+    }
     return this.doPost( url, dto,
         this.processCredentialResponse, this );
 
