@@ -203,7 +203,9 @@ let customId = 'customId';
 let bankId = 1;
 let username = 'username';
 let password = 'password';
-let createCredentialDto = new CreateCredential( customId, bankId, username, password );
+let securityCode = 'securityCode';
+let documenType = 'documentType';
+let createCredentialDto = new CreateCredential( customId, bankId, username, password, securityCode, ddocumentType );
 finerioConnectLite.createCredential( createCredentialDto )
   .then( data => console.log( data ) )
   .catch( error => console.log( error ) );
