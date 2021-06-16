@@ -8,6 +8,7 @@ This SDK lets you connect to [Finerio Connect Lite API](https://lite-api-docs.fi
 * [Setup](#setup)
 * [Usage](#usage)
     * [Get available banks](#get-available-banks)
+    * [Get bank fields](#get-bank-fields)
     * [Get credential error messages](#get-credential-error-messages)
     * [Get callbacks](#get-callbacks)
     * [Get a callback](#get-a-callback)
@@ -58,6 +59,29 @@ Output:
 [
   Bank { id: 1, name: 'BBVA Bancomer', status: 'ACTIVE' },
   Bank { id: 2, name: 'Citibanamex', status: 'ACTIVE' },
+...
+]
+```
+
+### Get bank fields ###
+
+```javascript
+finerioConnectLite.getBankFields( bankId )
+  .then( data => console.log( data ) ) 
+  .catch( error => console.log( error ) );
+```
+
+Output:
+
+```console
+[
+  BankField {
+    name: 'username',
+    friendlyName: 'Usuario',
+    position: 1,
+    type: '1',
+    required: true
+  },
 ...
 ]
 ```
